@@ -23,17 +23,19 @@ body {
   height: 100%;
   background: url("https://i.ibb.co/Sx6YQ6y/matrix-code.gif") repeat;
   background-size: cover;
-  opacity: 0.07;
+  opacity: 0.05; /* کاهش شفافیت برای تمرکز روی محتوا */
   filter: grayscale(100%) contrast(120%);
 }
 
 /* Card styles */
 .card {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8); /* پس‌زمینه جامدتر برای خوانایی */
   border: 1px solid #00ff99;
   border-radius: 15px;
   box-shadow: 0 0 20px #00ff99;
   transition: box-shadow 0.3s ease;
+  position: relative;
+  z-index: 10; /* مطمئن شدن از بالای پس‌زمینه بودن */
 }
 
 .card:hover {
@@ -72,10 +74,10 @@ body {
 /* Responsive design */
 @media (max-width: 600px) {
   .card {
-    padding: 1rem;
+    padding: 1.5rem;
   }
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
   p {
     font-size: 1rem;
@@ -83,5 +85,8 @@ body {
   .social-icon {
     width: 24px;
     height: 24px;
+  }
+  nav {
+    padding: 0.5rem;
   }
 }
