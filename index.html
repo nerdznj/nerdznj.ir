@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="امین - برنامه‌نویس و توسعه‌دهنده" />
-  <meta name="keywords" content="امین , Amin , برنامه‌نویس, توسعه‌دهنده, GitHub, LinkedIn" />
-  <meta name="author" content="Amin " />
-  <title>امین  | توسعه‌دهنده وب</title>
+  <meta name="description" content="وب‌سایت رسمی امین تقی بیگلو، برنامه‌نویس و توسعه‌دهنده‌ی وب. آشنایی با تخصص‌ها، پروژه‌ها و لینک‌های شبکه‌های اجتماعی.">
+  <meta name="keywords" content="امین تقی بیگلو, Amin Taghi Beygloo, برنامه‌نویس, توسعه‌دهنده, GitHub, LinkedIn, سایت شخصی امین">
+  <meta name="author" content="Amin Taghi Beygloo" />
+  <meta property="og:title" content="امین تقی بیگلو | برنامه‌نویس وب">
+  <meta property="og:description" content="وب‌سایت رسمی امین تقی بیگلو، برنامه‌نویس، توسعه‌دهنده و علاقه‌مند به فناوری.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nerdznj.ir">
+  <title>امین تقی بیگلو | برنامه‌نویس و توسعه‌دهنده وب</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
 </head>
 <body>
-  <canvas id="matrix"></canvas>
   <div class="container">
+    <div class="background"></div>
     <div class="card">
-      <h1>سلام، من <span>امین </span> هستم</h1>
-      <p>برنامه‌نویس، توسعه‌دهنده‌ی وب، و عاشق تکنولوژی‌های نو</p>
+      <h1>سلام، من <span>امین تقی بیگلو</span> هستم</h1>
+      <p>برنامه‌نویس، توسعه‌دهنده‌ی وب، و عاشق تکنولوژی‌های نو. از طریق شبکه‌های اجتماعی با من در ارتباط باشید.</p>
       <div class="social-links">
         <a href="https://twitter.com/Radikal_orea" target="_blank" title="X">
           <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X">
@@ -32,49 +35,5 @@
       </div>
     </div>
   </div>
-
-  <script>
-    // Matrix background effect
-    const canvas = document.getElementById('matrix');
-    const ctx = canvas.getContext('2d');
-
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-
-    let letters = "01";
-    letters = letters.split("");
-
-    let fontSize = 14;
-    let columns = canvas.width / fontSize;
-    let drops = Array.from({length: columns}, () => 1);
-
-    function draw() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = "#00ff00";
-      ctx.font = fontSize + "px monospace";
-
-      for (let i = 0; i < drops.length; i++) {
-        let text = letters[Math.floor(Math.random() * letters.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-
-        drops[i]++;
-      }
-    }
-
-    setInterval(draw, 33);
-
-    window.addEventListener('resize', () => {
-      canvas.height = window.innerHeight;
-      canvas.width = window.innerWidth;
-      columns = canvas.width / fontSize;
-      drops = Array.from({length: columns}, () => 1);
-    });
-  </script>
 </body>
 </html>
