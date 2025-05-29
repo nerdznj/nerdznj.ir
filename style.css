@@ -1,14 +1,11 @@
-/* فونت و پایه */
 body {
   margin: 0;
   font-family: 'Vazirmatn', sans-serif;
   direction: rtl;
-  background-color: #0a0a0a;
-  color: #f0f0f0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-/* پس‌زمینه ماتریکسی */
+/* Matrix background */
 .background-animation {
   position: fixed;
   top: 0;
@@ -17,7 +14,6 @@ body {
   height: 100%;
   z-index: -1;
   background: black;
-  overflow: hidden;
 }
 
 .background-animation::before {
@@ -31,72 +27,60 @@ body {
   filter: grayscale(100%) contrast(120%);
 }
 
-/* کارت اصلی معرفی */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding: 20px;
-  text-align: center;
-}
-
+/* Card styles */
 .card {
   background-color: rgba(0, 0, 0, 0.6);
   border: 1px solid #00ff99;
   border-radius: 15px;
-  padding: 2rem;
-  max-width: 600px;
   box-shadow: 0 0 20px #00ff99;
+  transition: box-shadow 0.3s ease;
 }
 
-.card h1 {
-  font-size: 2rem;
-  color: #00ff99;
+.card:hover {
+  box-shadow: 0 0 30px #00ccff;
 }
 
-.card h1 span {
-  color: #00ccff;
-}
-
-.card p {
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #ccc;
-}
-
-/* لینک‌ها و آیکون‌ها */
-.social-links {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.social-links a img {
+/* Social icons */
+.social-icon {
   width: 30px;
   height: 30px;
   transition: transform 0.3s ease;
   filter: invert(100%);
 }
 
-.social-links a:hover img {
+.social-icon:hover {
   transform: scale(1.2);
   filter: invert(42%) sepia(99%) saturate(7440%) hue-rotate(144deg) brightness(101%) contrast(100%);
 }
 
-/* ریسپانسیو موبایل */
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease forwards;
+}
+
+/* Responsive design */
 @media (max-width: 600px) {
-  .card h1 {
+  .card {
+    padding: 1rem;
+  }
+  h1 {
     font-size: 1.5rem;
   }
-
-  .card p {
+  p {
     font-size: 1rem;
   }
-
-  .social-links a img {
+  .social-icon {
     width: 24px;
     height: 24px;
   }
