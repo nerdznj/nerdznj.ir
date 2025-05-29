@@ -18,27 +18,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#0a0a0a] text-[#f0f0f0]">
+<body class="bg-[#0a0a0a] text-white">
   <div class="background-animation"></div>
   <!-- Navigation -->
-  <header class="bg-black bg-opacity-80 sticky top-0 z-10">
+  <header class="bg-black sticky top-0 z-50">
     <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
       <a href="/" class="text-2xl font-bold text-[#00ff99] hover:text-[#00ccff] transition-colors">Nerdznj</a>
       <div id="desktop-menu" class="hidden md:flex space-x-6 space-x-reverse">
-        <a href="#home" class="text-[#f0f0f0] hover:text-[#00ccff] transition-colors">خانه</a>
-        <a href="#about" class="text-[#f0f0f0] hover:text-[#00ccff] transition-colors">درباره من</a>
-        <a href="#contact" class="text-[#f0f0f0] hover:text-[#00ccff] transition-colors">ارتباط</a>
+        <a href="#home" class="text-white hover:text-[#00ccff] transition-colors">خانه</a>
+        <a href="#about" class="text-white hover:text-[#00ccff] transition-colors">درباره من</a>
+        <a href="#contact" class="text-white hover:text-[#00ccff] transition-colors">ارتباط</a>
       </div>
       <div id="mobile-menu" class="md:hidden">
-        <button id="menu-toggle" class="text-[#f0f0f0] focus:outline-none">
+        <button id="menu-toggle" class="text-white focus:outline-none">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
         </button>
-        <div id="mobile-menu-items" class="hidden absolute top-16 right-4 bg-black bg-opacity-90 rounded-lg shadow-lg w-48">
-          <a href="#home" class="block px-4 py-2 text-[#f0f0f0] hover:bg-[#00ff99] hover:text-black">خانه</a>
-          <a href="#about" class="block px-4 py-2 text-[#f0f0f0] hover:bg-[#00ff99] hover:text-black">درباره من</a>
-          <a href="#contact" class="block px-4 py-2 text-[#f0f0f0] hover:bg-[#00ff99] hover:text-black">ارتباط</a>
+        <div id="mobile-menu-items" class="hidden absolute top-16 right-4 bg-black rounded-lg shadow-lg w-48 z-50">
+          <a href="#home" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">خانه</a>
+          <a href="#about" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">درباره من</a>
+          <a href="#contact" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">ارتباط</a>
         </div>
       </div>
       <button id="theme-toggle" class="px-4 py-2 bg-[#00ff99] text-black rounded-lg hover:bg-[#00ccff] transition-colors">تغییر تم</button>
@@ -48,7 +48,7 @@
   <!-- Home Section -->
   <main id="home" class="min-h-screen flex items-center">
     <div class="container mx-auto px-4">
-      <div class="card p-6 mx-auto max-w-lg text-center animate-fade-in">
+      <div class="card p-6 mx-auto max-w-lg text-center animate-fade-in z-10">
         <h1 class="text-3xl md:text-4xl font-bold mb-4">سلام، من <span class="text-[#00ccff]">امین تقی بیگلو</span> هستم</h1>
         <p class="text-lg md:text-xl mb-6">برنامه‌نویس، مشاور امنیت شبکه، و عاشق فناوری‌های نو.</p>
         <p class="mb-6">از ۱۵ سالگی با جاوااسکریپت شروع کردم و حالا با پایتون و امنیت سایبری، دنیای دیجیتال رو امن‌تر و جذاب‌تر می‌کنم.</p>
@@ -70,7 +70,7 @@
   <!-- About Section -->
   <section id="about" class="py-16">
     <div class="container mx-auto px-4">
-      <div class="card p-6 mx-auto max-w-4xl text-right animate-fade-in">
+      <div class="card p-6 mx-auto max-w-4xl text-right animate-fade-in z-10">
         <h2 class="text-3xl font-bold mb-8 text-[#00ff99] text-center">درباره من</h2>
         <p class="mb-4">سلام، خوش اومدی به دنیای من! 😎</p>
         <p class="mb-4">من امین تقی بیگلو هستم، یه برنامه‌نویس و مشاور امنیت شبکه که از ۱۵ سالگی با جاوااسکریپت وارد دنیای کدنویسی شدم و خیلی زود عاشقش شدم. بعدها پایتون شد ابزار اصلی‌م برای پروژه‌ها و هنوزم همراهمه.</p>
@@ -84,7 +84,7 @@
   <!-- Contact Section -->
   <section id="contact" class="py-16">
     <div class="container mx-auto px-4">
-      <div class="card p-6 mx-auto max-w-lg text-center animate-fade-in">
+      <div class="card p-6 mx-auto max-w-lg text-center animate-fade-in z-10">
         <h2 class="text-3xl font-bold mb-8 text-[#00ff99]">ارتباط با من</h2>
         <p class="mb-6">برای همکاری، مشاوره امنیت، یا فقط یه گپ برنامه‌نویسی، بیا تو شبکه‌های اجتماعی پیدام کن!</p>
         <div class="social-links flex justify-center gap-6">
@@ -103,7 +103,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black bg-opacity-80 text-[#f0f0f0] p-4 text-center">
+  <footer class="bg-black text-white p-4 text-center">
     <p>© 2025 Nerdznj. ساخته شده با 💾 توسط امین تقی بیگلو</p>
   </footer>
 
@@ -118,14 +118,14 @@
     const updateTheme = () => {
       if (body.classList.contains('bg-[#0a0a0a]')) {
         body.classList.replace('bg-[#0a0a0a]', 'bg-[#f0f0f0]');
-        body.classList.replace('text-[#f0f0f0]', 'text-[#0a0a0a]');
+        body.classList.replace('text-white', 'text-[#0a0a0a]');
         document.querySelectorAll('.card').forEach(card => {
           card.classList.replace('bg-black', 'bg-white');
           card.classList.replace('bg-opacity-60', 'bg-opacity-80');
         });
       } else {
         body.classList.replace('bg-[#f0f0f0]', 'bg-[#0a0a0a]');
-        body.classList.replace('text-[#0a0a0a]', 'text-[#f0f0f0]');
+        body.classList.replace('text-[#0a0a0a]', 'text-white');
         document.querySelectorAll('.card').forEach(card => {
           card.classList.replace('bg-white', 'bg-black');
           card.classList.replace('bg-opacity-80', 'bg-opacity-60');
