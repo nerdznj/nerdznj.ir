@@ -10,13 +10,14 @@
   <meta property="og:description" content="وب‌سایت رسمی امین تقی بیگلو، برنامه‌نویس و مشاور امنیت شبکه با علاقه به فناوری‌های نو و متن‌باز.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nerdznj.ir">
-  <meta property="og:image" content="https://i.ibb.co/Sx6YQ6y/matrix-code.gif">
+  <meta property="og:image" content="https://nerdznj.ir/assets/avatar.png">
   <title>امین تقی بیگلو | Nerdznj</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js" defer></script>
 </head>
 <body class="bg-[#0a0a0a] text-white">
   <div class="background-animation"></div>
@@ -25,7 +26,8 @@
     <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
       <a href="/" class="text-2xl font-bold text-[#00ff99] hover:text-[#00ccff] transition-colors">Nerdznj</a>
       <div id="desktop-menu" class="hidden md:flex space-x-6 space-x-reverse">
-        <a href="#home" class="text-white hover:text-[#00ccff] transition-colors">خانه</a>
+        <a href="index.html" class="text-white hover:text-[#00ccff] transition-colors">خانه</a>
+        <a href="daily.html" class="text-white hover:text-[#00ccff] transition-colors">روزمره</a>
         <a href="#about" class="text-white hover:text-[#00ccff] transition-colors">درباره من</a>
         <a href="#contact" class="text-white hover:text-[#00ccff] transition-colors">ارتباط</a>
       </div>
@@ -36,7 +38,8 @@
           </svg>
         </button>
         <div id="mobile-menu-items" class="hidden absolute top-16 right-4 bg-black rounded-lg shadow-lg w-48 z-50">
-          <a href="#home" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">خانه</a>
+          <a href="index.html" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">خانه</a>
+          <a href="daily.html" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">روزمره</a>
           <a href="#about" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">درباره من</a>
           <a href="#contact" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">ارتباط</a>
         </div>
@@ -49,6 +52,7 @@
   <main id="home" class="min-h-screen flex items-center">
     <div class="container mx-auto px-4">
       <div class="card p-6 mx-auto max-w-lg text-center animate-fade-in z-10">
+        <img src="/assets/avatar.png" alt="آواتار امین تقی بیگلو" class="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 rounded-full border-2 border-[#00ff99] shadow-[0_0_15px_#00ccff]">
         <h1 class="text-3xl md:text-4xl font-bold mb-4">سلام، من <span class="text-[#00ccff]">امین تقی بیگلو</span> هستم</h1>
         <p class="text-lg md:text-xl mb-6">برنامه‌نویس، مشاور امنیت شبکه، و عاشق فناوری‌های نو.</p>
         <p class="mb-6">از ۱۵ سالگی با جاوااسکریپت شروع کردم و حالا با پایتون و امنیت سایبری، دنیای دیجیتال رو امن‌تر و جذاب‌تر می‌کنم.</p>
@@ -75,6 +79,7 @@
         <p class="mb-4">سلام، خوش اومدی به دنیای من! 😎</p>
         <p class="mb-4">من امین تقی بیگلو هستم، یه برنامه‌نویس و مشاور امنیت شبکه که از ۱۵ سالگی با جاوااسکریپت وارد دنیای کدنویسی شدم و خیلی زود عاشقش شدم. بعدها پایتون شد ابزار اصلی‌م برای پروژه‌ها و هنوزم همراهمه.</p>
         <p class="mb-4">کنجکاویم به ساختار سیستم‌ها منو کشوند به دنیای امنیت سایبری. از تحلیل آسیب‌پذیری‌ها تا تست نفوذ و ارزیابی امنیتی شبکه‌ها، هر روز چیز جدیدی یاد می‌گیرم و این مسیر برام هیجان‌انگیزه.</p>
+        <p class="mb-4"> اینجا توی nerdznj.ir می‌تونی با کارام، تحلیل‌های امنیتیم، و پروژه‌های شخصیم آشنا شی.</p>
       </div>
     </div>
   </section>
@@ -84,7 +89,7 @@
     <div class="container mx-auto px-4">
       <div class="card p-6 mx-auto max-w-lg text-center animate-fade-in z-10">
         <h2 class="text-3xl font-bold mb-8 text-[#00ff99]">ارتباط با من</h2>
-        <p class="mb-6">برای همکاری، یا فقط یه گپ برنامه‌نویسی، بیا تو شبکه‌های اجتماعی پیدام کن!</p>
+        <p class="mb-6">برای همکاری، مشاوره امنیت، یا فقط یه گپ برنامه‌نویسی، بیا تو شبکه‌های اجتماعی پیدام کن!</p>
         <div class="social-links flex justify-center gap-6">
           <a href="https://twitter.com/Radikal_orea" target="_blank" title="X">
             <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" class="social-icon">
@@ -104,50 +109,5 @@
   <footer class="bg-black text-white p-4 text-center">
     <p>© 2025 Nerdznj. ساخته شده با 💾 توسط امین تقی بیگلو</p>
   </footer>
-
-  <!-- JavaScript -->
-  <script>
-    const body = document.getElementById('body');
-    const themeToggle = document.getElementById('theme-toggle');
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu-items');
-
-    // Theme switching
-    const updateTheme = () => {
-      if (body.classList.contains('bg-[#0a0a0a]')) {
-        body.classList.replace('bg-[#0a0a0a]', 'bg-[#f0f0f0]');
-        body.classList.replace('text-white', 'text-[#0a0a0a]');
-        document.querySelectorAll('.card').forEach(card => {
-          card.classList.replace('bg-black', 'bg-white');
-          card.classList.replace('bg-opacity-60', 'bg-opacity-80');
-        });
-      } else {
-        body.classList.replace('bg-[#f0f0f0]', 'bg-[#0a0a0a]');
-        body.classList.replace('text-[#0a0a0a]', 'text-white');
-        document.querySelectorAll('.card').forEach(card => {
-          card.classList.replace('bg-white', 'bg-black');
-          card.classList.replace('bg-opacity-80', 'bg-opacity-60');
-        });
-      }
-    };
-
-    themeToggle.addEventListener('click', updateTheme);
-
-    // Mobile menu toggle
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-        mobileMenu.classList.add('hidden');
-      });
-    });
-  </script>
 </body>
 </html>
