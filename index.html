@@ -16,6 +16,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome برای آیکون‌ها -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/script.js" defer></script>
 </head>
@@ -53,8 +55,8 @@
     <!-- Home Section -->
     <main class="py-16 relative z-10" id="home">
         <div class="container mx-auto px-4 text-center">
-            <img src="/assets/avatar.png" alt="آواتار" class="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 rounded-full border-2 border-[#00ff99] shadow-[0_0_15px_#00ccff]">
-            <h1 class="text-3xl md:text-4xl font-bold text-[#00ff99] mb-4">سلام، من  <span></span> هستم</h1>
+            <img src="/assets/avatar.png" alt="آواتار امین تقی بیگلو" class="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 rounded-full border-2 border-[#00ff99] shadow-[0_0_15px_#00ccff]">
+            <h1 class="text-3xl md:text-4xl font-bold text-[#00ff99] mb-4">سلام، من <span></span> هستم</h1>
             <p class="text-gray-300 max-w-xl mx-auto mb-6">خوش اومدی به وبسایتم! اینجا تحلیل‌ها و یادداشت‌های من درباره امنیت سایبری رو می‌خونی. برای دیدن آخرین اخبار، به بخش <a href="/notes.html" class="text-[#00ccff] hover:underline">یادداشت‌ها</a> سر بزن.</p>
         </div>
     </main>
@@ -71,7 +73,18 @@
     <section id="contact" class="py-16 relative z-10">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-2xl font-semibold text-[#00ff99] mb-4">ارتباط با من</h2>
-            <p class="text-gray-300 max-w-xl mx-auto">برای همکاری یا سوال، با من تماس بگیر: <a href="mailto:amin@example.com" class="text-[#00ccff] hover:underline">amin@example.com</a></p>
+            <p class="text-gray-300 max-w-xl mx-auto mb-6">برای همکاری یا سوال، با من تماس بگیر:</p>
+            <div class="social-links flex justify-center space-x-6 space-x-reverse">
+                <a href="https://github.com/nerdznj" target="_blank" rel="noopener noreferrer" aria-label="پروفایل گیت‌هاب امین تقی بیگلو" class="text-[#00ccff] hover:text-[#00ff99] hover:scale-110 transition-all duration-300">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="https://linkedin.com/in/amin-radikal-3aa580322" target="_blank" rel="noopener noreferrer" aria-label="پروفایل لینکدین امین تقی بیگلو" class="text-[#00ccff] hover:text-[#00ff99] hover:scale-110 transition-all duration-300">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://twitter.com/Radikal_orea" target="_blank" rel="noopener noreferrer" aria-label="پروفایل توییتر امین تقی بیگلو" class="text-[#00ccff] hover:text-[#00ff99] hover:scale-110 transition-all duration-300">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+            </div>
         </div>
     </section>
 
