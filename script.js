@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('theme', 'dark');
                 themeToggle.textContent = 'تغییر تم (روشن)';
             }
+            console.log('Theme updated to:', localStorage.getItem('theme')); // دیباگ
         }
 
         const savedTheme = localStorage.getItem('theme');
