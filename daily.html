@@ -1,78 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="یادداشت‌های روزانه امین تقی بیگلو - اخبار امنیت سایبری و تحلیل‌های فنی">
-    <meta name="keywords" content="امین تقی بیگلو, امنیت سایبری, لینوکس, SAP, CVE, هک">
-    <meta name="author" content="امین تقی بیگلو">
-    <meta property="og:title" content="یادداشت‌های روزانه امین تقی بیگلو | Nerdznj">
-    <meta property="og:description" content="یادداشت‌های روزانه امین تقی بیگلو با موضوعات امنیت سایبری، نقص‌های لینوکس و SAP">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://nerdznj.ir/daily.html">
-    <meta property="og:image" content="https://nerdznj.ir/assets/avatar.png">
-    <title>یادداشت‌های روزانه | امین تقی بیگلو - Nerdznj</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="/script.js" defer></script>
-</head>
-<body class="bg-[#0a0a0a] text-white font-sans relative">
-    <!-- بک‌گراند انیمیشن -->
-    <div class="background-animation absolute inset-0 z-0"></div>
-
-    <!-- Navigation -->
-    <header class="bg-black sticky top-0 z-50">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center relative z-10">
-            <a href="/" class="text-2xl font-bold text-[#00ff99] hover:text-[#00ccff] transition-colors">Nerdznj</a>
-            <div id="desktop-menu" class="hidden md:flex space-x-6 space-x-reverse">
-                <a href="/index.html" class="text-white hover:text-[#00ccff] transition-colors">خانه</a>
-                <a href="/daily.html" class="text-white hover:text-[#00ccff] transition-colors">روزمره</a>
-                <a href="/index.html#about" class="text-white hover:text-[#00ccff] transition-colors">درباره من</a>
-                <a href="/index.html#contact" class="text-white hover:text-[#00ccff] transition-colors">ارتباط</a>
-            </div>
-            <div id="mobile-menu" class="md:hidden">
-                <button id="menu-toggle" class="text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
-                <div id="mobile-menu-items" class="hidden absolute top-16 right-4 bg-black rounded-lg shadow-lg w-48 z-20">
-                    <a href="/index.html" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">خانه</a>
-                    <a href="/daily.html" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">روزمره</a>
-                    <a href="/index.html#about" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">درباره من</a>
-                    <a href="/index.html#contact" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">ارتباط</a>
-                </div>
-            </div>
-            <button id="theme-toggle" class="px-4 py-2 bg-[#00ff99] text-black rounded-lg hover:bg-[#00ccff] transition-colors">تغییر تم</button>
-        </nav>
-    </header>
-
-    <!-- Daily Notes Section -->
-    <main class="py-16 relative z-10">
-        <div class="container mx-auto px-4">
-            <!-- آواتار -->
-            <img src="/assets/avatar.png" alt="آواتار امین تقی بیگلو" class="w-24 h-24 md:w-32 md:h-32 mx-auto mt-8 mb-4 rounded-full border-2 border-[#00ff99] shadow-[0_0_15px_#00ccff] relative z-10">
-
-            <!-- عنوان صفحه -->
-            <h1 class="text-3xl md:text-4xl font-bold text-[#00ff99] text-center mb-8 relative z-10">یادداشت‌های روزانه امین تقی بیگلو</h1>
-
-            <!-- منوی همبرگری برای خبرها -->
-            <div class="relative z-10">
-                <button id="news-toggle" class="block mx-auto px-6 py-3 bg-[#00ff99] text-black rounded-lg hover:bg-[#00ccff] transition-colors font-semibold">مشاهده یادداشت‌ها</button>
-                <div id="news-items" class="hidden mt-4 bg-gray-800 p-4 rounded-lg shadow-lg max-w-lg mx-auto">
-                    <a href="/linux-vulnerabilities.html" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black rounded-lg mb-2">نقص‌های جدید در لینوکس که ممکن است رمزهای عبور را لو بدهد</a>
-                    <a href="/cve-2025-31324.html" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black rounded-lg">تحلیل فعالیت هکرهای چینی در بهره‌برداری از CVE-2025-31324</a>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-black text-white p-4 text-center relative z-10">
-        <p>© ۲۰۲۵ Nerdznj. ساخته شده با 💾 توسط <strong><a href="/" class="text-[#00ccff] hover:underline">امین تقی بیگلو</a></strong></p>
-    </footer>
-</body>
-</html>
