@@ -1,92 +1,49 @@
-body {
-  margin: 0;
-  font-family: 'Vazirmatn', sans-serif;
-  direction: rtl;
-  overflow-x: hidden;
-}
-
-/* Matrix background */
 .background-animation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: #0a0a0a;
 }
 
-.background-animation::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: url("https://i.ibb.co/Sx6YQ6y/matrix-code.gif") repeat;
-  background-size: cover;
-  opacity: 0.05; /* کاهش شفافیت برای تمرکز روی محتوا */
-  filter: grayscale(100%) contrast(120%);
+.background-animation::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.8), rgba(0, 0, 0, 1));
+    z-index: 1;
 }
 
-/* Card styles */
-.card {
-  background-color: rgba(0, 0, 0, 0.8); /* پس‌زمینه جامدتر برای خوانایی */
-  border: 1px solid #00ff99;
-  border-radius: 15px;
-  box-shadow: 0 0 20px #00ff99;
-  transition: box-shadow 0.3s ease;
-  position: relative;
-  z-index: 10; /* مطمئن شدن از بالای پس‌زمینه بودن */
+.background-animation span {
+    position: absolute;
+    color: #00ff99;
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 1.5em;
+    animation: fall linear infinite;
 }
 
-.card:hover {
-  box-shadow: 0 0 30px #00ccff;
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 1;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
 }
 
-/* Social icons */
-.social-icon {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s ease;
-  filter: invert(100%);
-}
-
-.social-icon:hover {
-  transform: scale(1.2);
-  filter: invert(42%) sepia(99%) saturate(7440%) hue-rotate(144deg) brightness(101%) contrast(100%);
-}
-
-/* Animations */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.5s ease forwards;
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-  .card {
-    padding: 1.5rem;
-  }
-  h1 {
-    font-size: 1.8rem;
-  }
-  p {
-    font-size: 1rem;
-  }
-  .social-icon {
-    width: 24px;
-    height: 24px;
-  }
-  nav {
-    padding: 0.5rem;
-  }
-}
+.background-animation span:nth-child(1) { left: 10%; animation-duration: 15s; animation-delay: 0s; }
+.background-animation span:nth-child(2) { left: 20%; animation-duration: 20s; animation-delay: 2s; }
+.background-animation span:nth-child(3) { left: 30%; animation-duration: 18s; animation-delay: 1s; }
+.background-animation span:nth-child(4) { left: 40%; animation-duration: 16s; animation-delay: 3s; }
+.background-animation span:nth-child(5) { left: 50%; animation-duration: 19s; animation-delay: 0.5s; }
