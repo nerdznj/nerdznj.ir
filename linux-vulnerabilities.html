@@ -1,98 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="تحلیل نقص‌های امنیتی لینوکس (CVE-2025-5054 و CVE-2025-4598) توسط امین تقی بیگلو - اخبار امنیت سایبری">
-    <meta name="keywords" content="امین تقی بیگلو, لینوکس, نقص امنیتی, CVE-2025-5054, CVE-2025-4598, امنیت سایبری">
-    <meta name="author" content="امین تقی بیگلو">
-    <meta property="og:title" content="نقص‌های لینوکس (CVE-2025-5054, CVE-2025-4598) | امین تقی بیگلو">
-    <meta property="og:description" content="تحلیل نقص‌های امنیتی لینوکس (CVE-2025-5054 و CVE-2025-4598) توسط امین تقی بیگلو">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://nerdznj.ir/linux-vulnerabilities.html">
-    <meta property="og:image" content="https://nerdznj.ir/assets/avatar.png">
-    <title>نقص‌های لینوکس (CVE-2025-5054, CVE-2025-4598) | امین تقی بیگلو</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="/script.js" defer></script>
-</head>
-<body class="bg-[#0a0a0a] text-white font-sans relative">
-    <!-- بک‌گراند انیمیشن -->
-    <div class="background-animation absolute inset-0 z-0"></div>
-
-    <!-- Navigation -->
-    <header class="bg-black sticky top-0 z-50">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center relative z-10">
-            <a href="/" class="text-2xl font-bold text-[#00ff99] hover:text-[#00ccff] transition-colors">Nerdznj</a>
-            <div id="desktop-menu" class="hidden md:flex space-x-6 space-x-reverse">
-                <a href="/index.html" class="text-white hover:text-[#00ccff] transition-colors">خانه</a>
-                <a href="/daily.html" class="text-white hover:text-[#00ccff] transition-colors">روزمره</a>
-                <a href="/index.html#about" class="text-white hover:text-[#00ccff] transition-colors">درباره من</a>
-                <a href="/index.html#contact" class="text-white hover:text-[#00ccff] transition-colors">ارتباط</a>
-            </div>
-            <div id="mobile-menu" class="md:hidden">
-                <button id="menu-toggle" class="text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
-                <div id="mobile-menu-items" class="hidden absolute top-16 right-4 bg-black rounded-lg shadow-lg w-48 z-20">
-                    <a href="/index.html" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">خانه</a>
-                    <a href="/daily.html" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">روزمره</a>
-                    <a href="/index.html#about" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">درباره من</a>
-                    <a href="/index.html#contact" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">ارتباط</a>
-                </div>
-            </div>
-            <button id="theme-toggle" class="px-4 py-2 bg-[#00ff99] text-black rounded-lg hover:bg-[#00ccff] transition-colors">تغییر تم</button>
-        </nav>
-    </header>
-
-    <!-- News Content -->
-    <main class="py-16 relative z-10">
-        <div class="container mx-auto px-4">
-            <!-- آواتار -->
-            <img src="/assets/avatar.png" alt="آواتار امین تقی بیگلو" class="w-24 h-24 md:w-32 md:h-32 mx-auto mt-8 mb-4 rounded-full border-2 border-[#00ff99] shadow-[0_0_15px_#00ccff] relative z-10">
-
-            <article class="bg-gray-800 p-6 rounded-lg shadow-lg mb-8 relative z-10">
-                <h1 class="text-2xl font-semibold text-[#00ccff] mb-4">نقص‌های جدید در لینوکس که ممکن است رمزهای عبور را لو بدهد</h1>
-                <p class="mb-4">چند روز پیش خبری از دنیای امنیت سایبری منتشر شد که دو نقص امنیتی در سیستم‌های لینوکسی پیدا شده است. این نقص‌ها به موضوع حساسی به نام "هش رمز عبور" مربوط می‌شوند و اگر به دست هکرها بیفتند، می‌توانند مشکلات جدی ایجاد کنند. من امین تقی بیگلو هستم و در این یادداشت می‌خواهم این موضوع را کمی دقیق‌تر بررسی کنم.</p>
-
-                <h2 class="text-xl font-semibold text-[#00ff99] mb-2">مشکل چیست؟</h2>
-                <p class="mb-4">گروهی از محققان به نام Qualys Threat Research Unit یا به اختصار TRU دو باگ امنیتی را شناسایی کرده‌اند که نامشان CVE-2025-5054 و CVE-2025-4598 است. این باگ‌ها به نوعی مشکل در زمان‌بندی سیستم عامل هستند که به آن "race condition" می‌گویند. این مشکل می‌تواند به یک هکر که به سیستم دسترسی دارد، اجازه بدهد به اطلاعاتی مثل هش رمزهای عبور دست پیدا کند. این اطلاعات معمولاً در فایل <code>/etc/shadow</code> ذخیره می‌شوند و بسیار حساس هستند.</p>
-                <p class="mb-4">این نقص‌ها در دو ابزار معروف لینوکس به نام‌های Apport (که در اوبونتو استفاده می‌شود) و systemd-coredump (که در توزیع‌هایی مثل Red Hat و Fedora هست) پیدا شده‌اند. این ابزارها برای مدیریت گزارش‌های خرابی سیستم طراحی شده‌اند، اما حالا مشخص شده که می‌توانند باعث لو رفتن اطلاعات شوند.</p>
-
-                <h2 class="text-xl font-semibold text-[#00ff99] mb-2">جزئیات فنی (به زبان ساده)</h2>
-                <ul class="list-disc list-inside mb-4">
-                    <li><strong>CVE-2025-5054</strong>: این باگ در پکیج Apport اوبونتو (تا نسخه 2.32.0) وجود دارد. یک هکر می‌تواند با استفاده از تکنیکی به نام PID-reuse و چند روش خاص، اطلاعات حساس را از برنامه‌هایی که کرش می‌کنند و به اصطلاح SUID هستند، استخراج کند.</li>
-                    <li><strong>CVE-2025-4598</strong>: این نقص در systemd-coredump است و در توزیع‌هایی مثل Red Hat و Fedora دیده می‌شود. هکر می‌تواند یک برنامه SUID را وادار به کرش کند و بعد با ترفندی به فایل‌های حساس مثل هش رمز عبور دسترسی پیدا کند. نکته مثبت این است که اوبونتو به صورت پیش‌فرض از این باگ در امان است، چون systemd-coredump را نصب نمی‌کند.</li>
-                </ul>
-                <p class="mb-4">هر دوی این باگ‌ها در مقیاس CVSS امتیاز 4.7 از 10 دارند، یعنی خطرشان متوسط رو به پایین است، چون بهره‌برداری از آنها پیچیده است و نیاز به دسترسی محلی به سیستم دارد.</p>
-
-                <h2 class="text-xl font-semibold text-[#00ff99] mb-2">برای جلوگیری از هک چه کنیم؟</h2>
-                <p class="mb-4">حالا که این مشکلات شناسایی شده‌اند، چند راه حل برای محافظت پیشنهاد شده است:</p>
-                <ul class="list-disc list-inside mb-4">
-                    <li><strong>برای CVE-2025-4598</strong>: اگر از Red Hat یا Fedora استفاده می‌کنید، می‌توانید با دستور زیر جلوی تولید core dump برای برنامه‌های SUID را بگیرید: <br><code>echo 0 > /proc/sys/fs/suid_dumpable</code><br>این دستور باید با دسترسی root اجرا شود. البته این راه حل موقت است و ممکن است برای تحلیل کرش‌ها به مشکل بربخورید.</li>
-                    <li><strong>برای CVE-2025-5054</strong>: اگر اوبونتو دارید، بهتر است Apport را به‌روزرسانی کنید یا تنظیماتش را بررسی کنید تا جلوی لو رفتن اطلاعات گرفته شود.</li>
-                    <li><strong>به طور کلی</strong>: همیشه سیستم خود را به‌روز نگه دارید. شرکت‌هایی مثل Canonical و Red Hat در حال کار روی پچ این باگ‌ها هستند، پس نسخه‌های جدید پکیج‌های Apport و systemd-coredump را نصب کنید.</li>
-                </ul>
-
-                <h2 class="text-xl font-semibold text-[#00ff99] mb-2">این باگ‌ها چقدر خطرناک هستند؟</h2>
-                <p class="mb-4">این نقص‌ها به هکر اجازه می‌دهند به هش رمزهای عبور دسترسی پیدا کنند و از آن برای هک حساب‌های کاربری استفاده کنند. اما چون بهره‌برداری از آنها نیاز به دسترسی محلی دارد و پیچیدگی بالایی دارد، احتمال سوءاستفاده در دنیای واقعی خیلی زیاد نیست. با این حال، اگر هکری به سیستم شما دسترسی پیدا کرده باشد، این باگ‌ها کارش را راحت‌تر می‌کنند، به‌خصوص اگر رمزهای عبور ضعیفی داشته باشید که به راحتی کرک شوند.</p>
-
-                <h2 class="text-xl font-semibold text-[#00ff99] mb-2">جمع‌بندی</h2>
-                <p class="mb-4">اگر از لینوکس استفاده می‌کنید، بهتر است سیستم خود را بررسی کنید و مطمئن شوید که به‌روز است. این نقص‌ها نشان می‌دهند که حتی سیستم‌های قوی مثل لینوکس هم ممکن است نقاط ضعفی داشته باشند. همیشه به امنیت توجه کنید و رمزهای قوی انتخاب کنید.</p>
-                <p class="text-sm text-gray-400">منبع: The Hacker News</p>
-                <p class="text-sm text-gray-400 mt-2">نوشته شده توسط: <strong><a href="/" class="text-[#00ccff] hover:underline">امین تقی بیگلو</a></strong></p>
-            </article>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-black text-white p-4 text-center relative z-10">
-        <p>© ۲۰۲۵ Nerdznj. ساخته شده با 💾 توسط <strong><a href="/" class="text-[#00ccff] hover:underline">امین تقی بیگلو</a></strong></p>
-    </footer>
-</body>
-</html>
