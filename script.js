@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // لود تم ذخیره‌شده
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'light') {
             updateTheme();
@@ -66,9 +65,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const newsToggle = document.getElementById('news-toggle');
     const newsItems = document.getElementById('news-items');
     if (newsToggle && newsItems) {
+        console.log('News toggle and items found!'); // برای دیباگ
         newsToggle.addEventListener('click', () => {
+            console.log('News toggle clicked!'); // برای دیباگ
             newsItems.classList.toggle('hidden');
+            // برای اطمینان از نمایش، استایل رو دستی تغییر می‌دیم
+            if (newsItems.classList.contains('hidden')) {
+                newsItems.style.display = 'none';
+            } else {
+                newsItems.style.display = 'block';
+            }
         });
+    } else {
+        console.log('News toggle or items not found!'); // برای دیباگ
     }
 
     // بک‌گراند انیمیشن
