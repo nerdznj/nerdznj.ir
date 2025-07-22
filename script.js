@@ -3,23 +3,23 @@ let isLoading = true;
 let currentTheme = 'dark';
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Hide loading screen immediately
+    hideLoadingScreen();
+    
+    // Initialize website
     initializeWebsite();
 });
 
 // Main initialization function
 function initializeWebsite() {
-    showLoadingScreen();
-    
-    setTimeout(() => {
-        initializeTheme();
-        initializeNavigation();
-        initializeTypingEffect();
-        initializeScrollEffects();
-        initializeAnimations();
-        initializeContactForm();
-        initializeBackgroundEffect();
-        hideLoadingScreen();
-    }, 1500);
+    // Initialize all components
+    initializeTheme();
+    initializeNavigation();
+    initializeTypingEffect();
+    initializeScrollEffects();
+    initializeAnimations();
+    initializeContactForm();
+    initializeBackgroundEffect();
 }
 
 // Loading Screen Functions
@@ -37,7 +37,10 @@ function hideLoadingScreen() {
         setTimeout(() => {
             loadingScreen.style.display = 'none';
             isLoading = false;
-        }, 500);
+        }, 300);
+    } else {
+        // If no loading screen element, just set isLoading to false
+        isLoading = false;
     }
 }
 
