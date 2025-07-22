@@ -3,68 +3,450 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="یادداشت‌های امین تقی بیگلو - اخبار و تحلیل‌های امنیت سایبری">
-    <meta name="keywords" content="امین تقی بیگلو, امنیت سایبری, لینوکس, SAP, CVE">
+    <meta name="description" content="یادداشت‌های امین تقی بیگلو - اخبار و تحلیل‌های امنیت سایبری، آسیب‌پذیری‌ها و تکنیک‌های هکینگ">
+    <meta name="keywords" content="امین تقی بیگلو, امنیت سایبری, لینوکس, SAP, CVE, یادداشت امنیتی, تحلیل آسیب‌پذیری">
     <meta name="author" content="امین تقی بیگلو">
-    <meta property="og:title" content="یادداشت‌های امین تقی بیگلو | Nerdznj">
-    <meta property="og:description" content="اخبار و یادداشت‌های امنیت سایبری توسط امین تقی بیگلو">
+    <meta property="og:title" content="یادداشت‌های امنیت سایبری | امین تقی بیگلو - Nerdznj">
+    <meta property="og:description" content="مجموعه یادداشت‌ها و تحلیل‌های تخصصی امنیت سایبری، آسیب‌پذیری‌ها و تکنیک‌های حفاظتی">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://nerdznj.ir/notes.html">
     <meta property="og:image" content="https://nerdznj.ir/assets/avatar.png">
-    <title>یادداشت‌ها | امین تقی بیگلو - Nerdznj</title>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@Radikal_orea">
+    <title>یادداشت‌های امنیت سایبری | امین تقی بیگلو - Nerdznj</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'vazir': ['Vazirmatn', 'sans-serif'],
+                    },
+                    colors: {
+                        'cyber-green': '#00ff99',
+                        'cyber-blue': '#00ccff',
+                        'cyber-purple': '#9945ff',
+                        'dark-bg': '#0a0a0a',
+                        'card-bg': '#1a1a1a',
+                    }
+                }
+            }
+        }
+    </script>
+    
     <script src="/script.js" defer></script>
 </head>
-<body class="bg-[#0a0a0a] text-white font-sans relative">
-    <!-- بک‌گراند انیمیشن -->
-    <div class="background-animation absolute inset-0 z-0"></div>
+<body class="bg-dark-bg text-white font-vazir relative overflow-x-hidden">
+    <!-- Background Effects -->
+    <div class="background-animation fixed inset-0 z-0"></div>
+    <div class="cyber-grid fixed inset-0 z-0 opacity-20"></div>
 
     <!-- Navigation -->
-    <header class="bg-black sticky top-0 z-50">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center relative z-10">
-            <a href="/" class="text-2xl font-bold text-[#00ff99] hover:text-[#00ccff] transition-colors">Nerdznj</a>
-            <div id="desktop-menu" class="hidden md:flex space-x-6 space-x-reverse">
-                <a href="/" class="text-white hover:text-[#00ccff] transition-colors">خانه</a>
-                <a href="/notes.html" class="text-white hover:text-[#00ccff] transition-colors">یادداشت‌ها</a>
-                <a href="/#about" class="text-white hover:text-[#00ccff] transition-colors">درباره من</a>
-                <a href="/#contact" class="text-white hover:text-[#00ccff] transition-colors">ارتباط</a>
-            </div>
-            <div id="mobile-menu" class="md:hidden">
-                <button id="menu-toggle" class="text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
-                <div id="mobile-menu-items" class="hidden absolute top-16 right-4 bg-black rounded-lg shadow-lg w-48 z-20">
-                    <a href="/" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">خانه</a>
-                    <a href="/notes.html" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">یادداشت‌ها</a>
-                    <a href="/#about" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">درباره من</a>
-                    <a href="/#contact" class="block px-4 py-2 text-white hover:bg-[#00ff99] hover:text-black">ارتباط</a>
+    <header class="bg-black/80 backdrop-blur-md sticky top-0 z-40 border-b border-cyber-green/20">
+        <nav class="container mx-auto px-4 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="/" class="flex items-center space-x-2 space-x-reverse group">
+                    <div class="w-10 h-10 bg-gradient-to-r from-cyber-green to-cyber-blue rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-terminal text-black font-bold"></i>
+                    </div>
+                    <span class="text-xl lg:text-2xl font-bold bg-gradient-to-r from-cyber-green to-cyber-blue bg-clip-text text-transparent">
+                        Nerdznj
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div id="desktop-menu" class="hidden lg:flex items-center space-x-8 space-x-reverse">
+                    <a href="/" class="nav-link" data-text="خانه">خانه</a>
+                    <a href="/#about" class="nav-link" data-text="درباره من">درباره من</a>
+                    <a href="/#skills" class="nav-link" data-text="مهارت‌ها">مهارت‌ها</a>
+                    <a href="/#projects" class="nav-link" data-text="پروژه‌ها">پروژه‌ها</a>
+                    <a href="/notes.html" class="nav-link active" data-text="یادداشت‌ها">یادداشت‌ها</a>
+                    <a href="/#contact" class="nav-link" data-text="تماس">تماس</a>
+                </div>
+
+                <!-- Controls -->
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <button id="theme-toggle" class="control-btn" title="تغییر تم">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="menu-toggle" class="control-btn lg:hidden" title="منو">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
             </div>
-            <button id="theme-toggle" class="px-4 py-2 bg-[#00ff99] text-black rounded-lg hover:bg-[#00ccff] transition-colors">تغییر تم</button>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden mt-4 hidden">
+                <div class="bg-card-bg/95 backdrop-blur-md rounded-lg p-4 space-y-3">
+                    <a href="/" class="mobile-nav-link">خانه</a>
+                    <a href="/#about" class="mobile-nav-link">درباره من</a>
+                    <a href="/#skills" class="mobile-nav-link">مهارت‌ها</a>
+                    <a href="/#projects" class="mobile-nav-link">پروژه‌ها</a>
+                    <a href="/notes.html" class="mobile-nav-link bg-cyber-green/20">یادداشت‌ها</a>
+                    <a href="/#contact" class="mobile-nav-link">تماس</a>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <!-- Notes Section -->
+    <!-- Header Section -->
+    <section class="py-20 relative z-10">
+        <div class="container mx-auto px-4 lg:px-8 text-center">
+            <!-- Avatar -->
+            <div class="relative mb-8">
+                <div class="w-24 h-24 lg:w-32 lg:h-32 mx-auto relative">
+                    <img src="/assets/avatar.png" alt="امین تقی بیگلو" 
+                         class="w-full h-full rounded-full border-4 border-cyber-green shadow-[0_0_30px_rgba(0,255,153,0.5)] animate-float">
+                    <div class="absolute inset-0 rounded-full border-4 border-cyber-blue animate-pulse opacity-50"></div>
+                </div>
+                <div class="absolute -bottom-2 -right-2 w-6 h-6 bg-cyber-green rounded-full border-4 border-dark-bg flex items-center justify-center">
+                    <i class="fas fa-edit text-black text-xs"></i>
+                </div>
+            </div>
+
+            <!-- Title & Description -->
+            <h1 class="section-title mb-6">یادداشت‌های امنیت سایبری</h1>
+            <p class="section-subtitle mb-8">تحلیل‌ها، یافته‌ها و بررسی آسیب‌پذیری‌های روز دنیای امنیت سایبری</p>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-12">
+                <div class="stat-card">
+                    <div class="text-2xl font-bold text-cyber-green mb-1">۲۰+</div>
+                    <div class="text-gray-400 text-sm">مقاله</div>
+                </div>
+                <div class="stat-card">
+                    <div class="text-2xl font-bold text-cyber-blue mb-1">۵+</div>
+                    <div class="text-gray-400 text-sm">دسته‌بندی</div>
+                </div>
+                <div class="stat-card">
+                    <div class="text-2xl font-bold text-cyber-purple mb-1">۱۰+</div>
+                    <div class="text-gray-400 text-sm">CVE بررسی شده</div>
+                </div>
+                <div class="stat-card">
+                    <div class="text-2xl font-bold text-cyber-green mb-1">۲۰۲۵</div>
+                    <div class="text-gray-400 text-sm">به‌روزرسانی</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Filter -->
+    <section class="py-8 bg-card-bg/30 relative z-10">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex flex-wrap gap-4 justify-center">
+                <button class="filter-btn active" data-category="all">
+                    <i class="fas fa-globe ml-2"></i>همه
+                </button>
+                <button class="filter-btn" data-category="vulnerability">
+                    <i class="fas fa-bug ml-2"></i>آسیب‌پذیری‌ها
+                </button>
+                <button class="filter-btn" data-category="linux">
+                    <i class="fab fa-linux ml-2"></i>لینوکس
+                </button>
+                <button class="filter-btn" data-category="sap">
+                    <i class="fas fa-server ml-2"></i>SAP
+                </button>
+                <button class="filter-btn" data-category="malware">
+                    <i class="fas fa-virus ml-2"></i>بدافزار
+                </button>
+                <button class="filter-btn" data-category="tools">
+                    <i class="fas fa-tools ml-2"></i>ابزارها
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notes Grid -->
     <main class="py-16 relative z-10">
-        <div class="container mx-auto px-4">
-            <img src="/assets/avatar.png" alt="آواتار امین تقی بیگلو" class="w-24 h-24 md:w-32 md:h-32 mx-auto mt-8 mb-4 rounded-full border-2 border-[#00ff99] shadow-[0_0_15px_#00ccff]">
-            <h1 class="text-3xl md:text-4xl font-bold text-[#00ff99] text-center mb-8">یادداشت‌های امین تقی بیگلو</h1>
-            <div class="space-y-4">
-                <a href="/note-linux.html" class="block bg-gray-800 p-4 rounded-lg shadow-lg hover:bg-[#00ff99] hover:text-black transition-colors">نقص‌های جدید در لینوکس که ممکن است رمزهای عبور را لو بدهد</a>
-                <a href="/note-sap.html" class="block bg-gray-800 p-4 rounded-lg shadow-lg hover:bg-[#00ff99] hover:text-black transition-colors">تحلیل فعالیت هکرهای چینی در بهره‌برداری از CVE-2025-31324</a>
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="notes-grid">
+                
+                <!-- Note 1: Linux Vulnerability -->
+                <article class="note-card" data-category="vulnerability linux">
+                    <div class="note-header">
+                        <div class="note-category">
+                            <i class="fab fa-linux"></i>
+                            <span>آسیب‌پذیری لینوکس</span>
+                        </div>
+                        <div class="note-date">
+                            <i class="fas fa-calendar-alt ml-1"></i>
+                            ۱۵ دی ۱۴۰۳
+                        </div>
+                    </div>
+                    <div class="note-content">
+                        <h3 class="note-title">نقص‌های جدید در لینوکس که ممکن است رمزهای عبور را لو بدهد</h3>
+                        <p class="note-excerpt">
+                            بررسی CVE-2025-5054 و CVE-2025-4598 و تأثیر آنها بر امنیت سیستم‌های لینوکس. این آسیب‌پذیری‌ها می‌توانند منجر به فاش شدن رمزهای عبور شوند.
+                        </p>
+                        <div class="note-tags">
+                            <span class="tag">CVE-2025-5054</span>
+                            <span class="tag">CVE-2025-4598</span>
+                            <span class="tag">Linux Security</span>
+                        </div>
+                    </div>
+                    <div class="note-footer">
+                        <a href="/note-linux.html" class="note-link">
+                            مطالعه کامل
+                            <i class="fas fa-arrow-left mr-2"></i>
+                        </a>
+                        <div class="note-meta">
+                            <span class="reading-time">
+                                <i class="fas fa-clock ml-1"></i>
+                                ۵ دقیقه مطالعه
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Note 2: SAP Security -->
+                <article class="note-card" data-category="vulnerability sap">
+                    <div class="note-header">
+                        <div class="note-category">
+                            <i class="fas fa-server"></i>
+                            <span>امنیت SAP</span>
+                        </div>
+                        <div class="note-date">
+                            <i class="fas fa-calendar-alt ml-1"></i>
+                            ۱۲ دی ۱۴۰۳
+                        </div>
+                    </div>
+                    <div class="note-content">
+                        <h3 class="note-title">تحلیل فعالیت هکرهای چینی در بهره‌برداری از CVE-2025-31324</h3>
+                        <p class="note-excerpt">
+                            گروه Chaya_004 و نحوه سوءاستفاده از آسیب‌پذیری SAP NetWeaver برای نفوذ به سیستم‌های شرکتی. تکنیک‌ها و روش‌های دفاعی.
+                        </p>
+                        <div class="note-tags">
+                            <span class="tag">CVE-2025-31324</span>
+                            <span class="tag">Chaya_004</span>
+                            <span class="tag">SAP NetWeaver</span>
+                        </div>
+                    </div>
+                    <div class="note-footer">
+                        <a href="/note-sap.html" class="note-link">
+                            مطالعه کامل
+                            <i class="fas fa-arrow-left mr-2"></i>
+                        </a>
+                        <div class="note-meta">
+                            <span class="reading-time">
+                                <i class="fas fa-clock ml-1"></i>
+                                ۷ دقیقه مطالعه
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Placeholder for future notes -->
+                <article class="note-card coming-soon" data-category="tools">
+                    <div class="note-header">
+                        <div class="note-category">
+                            <i class="fas fa-tools"></i>
+                            <span>ابزار امنیتی</span>
+                        </div>
+                        <div class="note-date">
+                            <i class="fas fa-clock ml-1"></i>
+                            به زودی
+                        </div>
+                    </div>
+                    <div class="note-content">
+                        <h3 class="note-title">معرفی ابزارهای جدید تست نفوذ</h3>
+                        <p class="note-excerpt">
+                            بررسی و معرفی جدیدترین ابزارهای تست نفوذ و امنیت سایبری که در سال ۲۰۲۵ عرضه شده‌اند.
+                        </p>
+                        <div class="note-tags">
+                            <span class="tag">Penetration Testing</span>
+                            <span class="tag">Security Tools</span>
+                            <span class="tag">2025</span>
+                        </div>
+                    </div>
+                    <div class="note-footer">
+                        <div class="note-link disabled">
+                            در حال نگارش...
+                        </div>
+                        <div class="note-meta">
+                            <span class="reading-time">
+                                <i class="fas fa-hourglass-half ml-1"></i>
+                                منتظر باشید
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="note-card coming-soon" data-category="malware">
+                    <div class="note-header">
+                        <div class="note-category">
+                            <i class="fas fa-virus"></i>
+                            <span>تحلیل بدافزار</span>
+                        </div>
+                        <div class="note-date">
+                            <i class="fas fa-clock ml-1"></i>
+                            به زودی
+                        </div>
+                    </div>
+                    <div class="note-content">
+                        <h3 class="note-title">تحلیل عمیق بدافزارهای جدید ۲۰۲۵</h3>
+                        <p class="note-excerpt">
+                            بررسی تکنیک‌های جدید بدافزارها و روش‌های شناسایی و مقابله با آنها. تحلیل استاتیک و داینامیک.
+                        </p>
+                        <div class="note-tags">
+                            <span class="tag">Malware Analysis</span>
+                            <span class="tag">Reverse Engineering</span>
+                            <span class="tag">Threat Intelligence</span>
+                        </div>
+                    </div>
+                    <div class="note-footer">
+                        <div class="note-link disabled">
+                            در حال نگارش...
+                        </div>
+                        <div class="note-meta">
+                            <span class="reading-time">
+                                <i class="fas fa-hourglass-half ml-1"></i>
+                                منتظر باشید
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="note-card coming-soon" data-category="vulnerability">
+                    <div class="note-header">
+                        <div class="note-category">
+                            <i class="fas fa-bug"></i>
+                            <span>آسیب‌پذیری وب</span>
+                        </div>
+                        <div class="note-date">
+                            <i class="fas fa-clock ml-1"></i>
+                            به زودی
+                        </div>
+                    </div>
+                    <div class="note-content">
+                        <h3 class="note-title">آسیب‌پذیری‌های جدید در فریمورک‌های وب</h3>
+                        <p class="note-excerpt">
+                            شناسایی و بررسی آسیب‌پذیری‌های جدید در فریمورک‌های محبوب وب و روش‌های استثمار آنها.
+                        </p>
+                        <div class="note-tags">
+                            <span class="tag">Web Security</span>
+                            <span class="tag">Framework Vulnerabilities</span>
+                            <span class="tag">Exploitation</span>
+                        </div>
+                    </div>
+                    <div class="note-footer">
+                        <div class="note-link disabled">
+                            در حال نگارش...
+                        </div>
+                        <div class="note-meta">
+                            <span class="reading-time">
+                                <i class="fas fa-hourglass-half ml-1"></i>
+                                منتظر باشید
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="note-card coming-soon" data-category="linux">
+                    <div class="note-header">
+                        <div class="note-category">
+                            <i class="fab fa-linux"></i>
+                            <span>تقویت امنیت لینوکس</span>
+                        </div>
+                        <div class="note-date">
+                            <i class="fas fa-clock ml-1"></i>
+                            به زودی
+                        </div>
+                    </div>
+                    <div class="note-content">
+                        <h3 class="note-title">راهنمای جامع تقویت امنیت سرورهای لینوکس</h3>
+                        <p class="note-excerpt">
+                            مجموعه‌ای از بهترین شیوه‌ها و تکنیک‌های تقویت امنیت سرورهای لینوکس در محیط‌های production.
+                        </p>
+                        <div class="note-tags">
+                            <span class="tag">Linux Hardening</span>
+                            <span class="tag">Server Security</span>
+                            <span class="tag">Best Practices</span>
+                        </div>
+                    </div>
+                    <div class="note-footer">
+                        <div class="note-link disabled">
+                            در حال نگارش...
+                        </div>
+                        <div class="note-meta">
+                            <span class="reading-time">
+                                <i class="fas fa-hourglass-half ml-1"></i>
+                                منتظر باشید
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="btn-outline" id="load-more">
+                    <i class="fas fa-plus ml-2"></i>
+                    نمایش مطالب بیشتر
+                </button>
             </div>
         </div>
     </main>
 
+    <!-- Newsletter Subscribe -->
+    <section class="py-16 bg-card-bg/30 relative z-10">
+        <div class="container mx-auto px-4 lg:px-8 text-center">
+            <h2 class="text-2xl lg:text-3xl font-bold text-cyber-green mb-4">اطلاع از آخرین مطالب</h2>
+            <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+                برای دریافت آخرین یادداشت‌ها و تحلیل‌های امنیت سایبری، عضو خبرنامه شوید
+            </p>
+            <form class="max-w-md mx-auto flex gap-4">
+                <input 
+                    type="email" 
+                    placeholder="ایمیل شما" 
+                    class="form-input flex-1" 
+                    required
+                >
+                <button type="submit" class="btn-primary whitespace-nowrap">
+                    <i class="fas fa-bell ml-2"></i>
+                    عضویت
+                </button>
+            </form>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="bg-black text-white p-4 text-center relative z-10">
-        <p>© ۲۰۲۵ Nerdznj. ساخته شده با 💾 توسط <strong><a href="/" class="text-[#00ccff] hover:underline">امین تقی بیگلو</a></strong></p>
+    <footer class="bg-black border-t border-cyber-green/20 py-8 relative z-10">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-400">
+                        © ۲۰۲۵ Nerdznj. ساخته شده با 
+                        <i class="fas fa-heart text-red-500 mx-1"></i>
+                        توسط 
+                        <a href="/" class="text-cyber-green hover:text-cyber-blue transition-colors">امین تقی بیگلو</a>
+                    </p>
+                </div>
+                <div class="flex space-x-4 space-x-reverse">
+                    <a href="/privacy.html" class="text-gray-400 hover:text-cyber-green transition-colors text-sm">حریم خصوصی</a>
+                    <a href="/terms.html" class="text-gray-400 hover:text-cyber-green transition-colors text-sm">شرایط استفاده</a>
+                    <a href="/sitemap.xml" class="text-gray-400 hover:text-cyber-green transition-colors text-sm">نقشه سایت</a>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="fixed bottom-8 left-8 w-12 h-12 bg-cyber-green text-black rounded-full shadow-lg hover:bg-cyber-blue transition-all duration-300 opacity-0 pointer-events-none z-50">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 </body>
 </html>
