@@ -130,15 +130,14 @@ body {
     to { opacity: 1; }
 }
 
+/* Navigation Styles */
 .nav-link {
     position: relative;
-    display: inline-block;
-    color: white;
+    color: #ffffff;
+    text-decoration: none;
     padding: 0.5rem 1rem;
-    overflow: hidden;
-    white-space: nowrap;
-    border-radius: 0.5rem;
     transition: all 0.3s ease;
+    border-radius: 0.5rem;
 }
 
 .nav-link::before {
@@ -146,21 +145,32 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* در حالت عادی کامل پنهان بشه */
+    width: 0;
     height: 100%;
     color: #00ff99;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    white-space: nowrap;
     padding: 0.5rem 1rem;
-    pointer-events: none;
 }
 
 .nav-link:hover::before {
-    transform: translateX(0%);
+    width: 100%;
 }
 
-.nav-link:hover {
-    color: transparent; /* متن سفید رو پنهان می‌کنه زیر متن سبز */
+.mobile-nav-link {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+    background: #00ff99;
+    color: #000000;
+    transform: translateX(-5px);
 }
 
 .control-btn {
@@ -183,6 +193,7 @@ body {
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(0, 255, 153, 0.5);
 }
+
 
 /* Typography */
 .section-title {
@@ -355,6 +366,7 @@ body {
     box-shadow: 0 15px 40px rgba(0, 255, 153, 0.2);
 }
 
+
 .skill-icon {
     width: 4rem;
     height: 4rem;
@@ -394,7 +406,7 @@ body {
 }
 
 .skill-list li:before {
-    content: "▶";
+    content: "▶️";
     color: #00ccff;
     margin-left: 0.5rem;
 }
@@ -569,6 +581,7 @@ body {
     opacity: 1;
     pointer-events: auto;
 }
+
 
 #back-to-top:hover {
     transform: translateY(-3px);
@@ -799,6 +812,7 @@ body {
 .nav-link.active {
     color: #00ff99;
 }
+
 
 .nav-link.active::before {
     width: 100%;
