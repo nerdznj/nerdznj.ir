@@ -138,6 +138,10 @@ body {
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
     border-radius: 0.5rem;
+	display: inline-block; 
+    line-height: 1;         
+    white-space: nowrap;    
+    overflow: hidden;       
 }
 
 .nav-link::before {
@@ -152,6 +156,9 @@ body {
     transition: width 0.3s ease;
     white-space: nowrap;
     padding: 0.5rem 1rem;
+	pointer-events: none; 
+    z-index: 2; 
+
 }
 
 .nav-link:hover::before {
