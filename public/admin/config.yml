@@ -1,7 +1,6 @@
 backend:
-  name: github
-  repo: nerdznj/nerdznj.ir # نام ریپازیتوری شما
-  branch: main # برنچ اصلی که می‌خواهید تغییرات در آن ثبت شود
+  name: git-gateway
+  branch: main # برنچ اصلی
 
 media_folder: "public/assets/images" # جایی که تصاویر آپلود می‌شوند
 public_folder: "/assets/images"
