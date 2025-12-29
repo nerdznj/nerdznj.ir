@@ -1,0 +1,18 @@
+backend:
+  name: github
+  repo: nerdznj/nerdznj.ir # نام ریپازیتوری شما
+  branch: main # برنچ اصلی که می‌خواهید تغییرات در آن ثبت شود
+
+media_folder: "assets/images" # جایی که تصاویر آپلود می‌شوند
+public_folder: "/assets/images"
+
+collections:
+  - name: "notes"
+    label: "یادداشت‌ها"
+    folder: "_notes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "عنوان", name: "title", widget: "string" }
+      - { label: "تاریخ", name: "date", widget: "datetime" }
+      - { label: "محتوا", name: "body", widget: "markdown" }

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="امین تقی بیگلو - متخصص امنیت سایبری، برنامه‌نویس و مشاور فناوری | تحلیل‌های امنیتی و یادداشت‌های تخصصی">
+    <meta name="keywords" content="امین تقی بیگلو, امنیت سایبری, برنامه‌نویسی, پایتون, جاوااسکریپت, تست نفوذ, لینوکس, SAP, CVE">
+    <meta name="author" content="امین تقی بیگلو">
+    <meta property="og:title" content="امین تقی بیگلو | متخصص امنیت سایبری - Nerdznj">
+    <meta property="og:description" content="وبسایت رسمی امین تقی بیگلو - تحلیل‌های امنیت سایبری، آموزش‌ها و یادداشت‌های تخصصی">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nerdznj.ir/">
+    <meta property="og:image" content="https://nerdznj.ir/assets/avatar.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@Radikal_orea">
+    <title>امین تقی بیگلو | متخصص امنیت سایبری - Nerdznj</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'vazir': ['Vazirmatn', 'sans-serif'],
+                    },
+                    colors: {
+                        'cyber-green': '#00ff99',
+                        'cyber-blue': '#00ccff',
+                        'cyber-purple': '#9945ff',
+                        'dark-bg': '#0a0a0a',
+                        'card-bg': '#1a1a1a',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'typing': 'typing 3.5s steps(40, end)',
+                        'blink': 'blink-caret .75s step-end infinite',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'fade-in': 'fadeIn 1s ease-out',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <script src="/script.js" defer></script>
+</head>
+<body class="bg-dark-bg text-white font-vazir relative overflow-x-hidden">
+    <!-- Background Effects -->
+    <div class="background-animation fixed inset-0 z-0"></div>
+    <div class="cyber-grid fixed inset-0 z-0 opacity-20"></div>
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0a0a0a; z-index: 9999; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center;">
+            <div class="loading-spinner" style="width: 40px; height: 40px; border: 4px solid #333; border-top: 4px solid #00ff99; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;"></div>
+            <p style="color: #00ff99; font-size: 1.125rem;">در حال بارگذاری...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="bg-black/80 backdrop-blur-md sticky top-0 z-40 border-b border-cyber-green/20">
+        <nav class="container mx-auto px-4 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="/" class="flex items-center space-x-2 space-x-reverse group">
+                    <div class="w-10 h-10 bg-gradient-to-r from-cyber-green to-cyber-blue rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-terminal text-black font-bold"></i>
+                    </div>
+                    <span class="text-xl lg:text-2xl font-bold bg-gradient-to-r from-cyber-green to-cyber-blue bg-clip-text text-transparent">
+                        Nerdznj
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div id="desktop-menu" class="hidden lg:flex items-center space-x-8 space-x-reverse">
+                    <a href="#home" class="nav-link" data-text="خانه">خانه</a>
+                    <a href="#about" class="nav-link" data-text="درباره من">درباره من</a>
+                    <a href="#skills" class="nav-link" data-text="مهارت‌ها">مهارت‌ها</a>
+                    <a href="#projects" class="nav-link" data-text="پروژه‌ها">پروژه‌ها</a>
+                    <a href="/notes.html" class="nav-link" data-text="یادداشت‌ها">یادداشت‌ها</a>
+                    <a href="#contact" class="nav-link" data-text="تماس">تماس</a>
+                </div>
+
+                <!-- Controls -->
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <button id="theme-toggle" class="control-btn" title="تغییر تم">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="menu-toggle" class="control-btn lg:hidden" title="منو">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden mt-4 hidden">
+                <div class="bg-card-bg/95 backdrop-blur-md rounded-lg p-4 space-y-3">
+                    <a href="#home" class="mobile-nav-link">خانه</a>
+                    <a href="#about" class="mobile-nav-link">درباره من</a>
+                    <a href="#skills" class="mobile-nav-link">مهارت‌ها</a>
+                    <a href="#projects" class="mobile-nav-link">پروژه‌ها</a>
+                    <a href="/notes.html" class="mobile-nav-link">یادداشت‌ها</a>
+                    <a href="#contact" class="mobile-nav-link">تماس</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center px-4 lg:px-8">
+        <div class="container mx-auto text-center relative z-10">
+            <!-- Avatar -->
+            <div class="relative mb-8">
+                <div class="w-32 h-32 lg:w-40 lg:h-40 mx-auto relative">
+                    <img src="/assets/avatar.png" alt="امین تقی بیگلو" 
+                         class="w-full h-full rounded-full border-4 border-cyber-green shadow-[0_0_30px_rgba(0,255,153,0.5)] animate-float">
+                    <div class="absolute inset-0 rounded-full border-4 border-cyber-blue animate-pulse opacity-50"></div>
+                </div>
+                <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-cyber-green rounded-full border-4 border-dark-bg flex items-center justify-center">
+                    <i class="fas fa-shield-alt text-black text-sm"></i>
+                </div>
+            </div>
+
+            <!-- Main Heading -->
+            <div class="mb-8">
+                <h1 class="text-3xl lg:text-5xl xl:text-6xl font-bold mb-4">
+                    <span class="text-white">سلام، من </span>
+                    <span id="typing-name" class="bg-gradient-to-r from-cyber-green to-cyber-blue bg-clip-text text-transparent"></span>
+                    <span class="cursor-blink">|</span>
+                </h1>
+                <h2 class="text-xl lg:text-2xl text-gray-300 font-medium mb-6">
+                    متخصص امنیت سایبری • برنامه‌نویس • مشاور فناوری
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+                    از ۱۵ سالگی با جاوااسکریپت آغاز کردم و امروز با پایتون و امنیت سایبری، 
+                    دنیای دیجیتال را امن‌تر و بهتر می‌سازم
+                </p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <a href="#contact" class="btn-primary">
+                    <i class="fas fa-envelope ml-2"></i>
+                    تماس با من
+                </a>
+                <a href="/notes.html" class="btn-secondary">
+                    <i class="fas fa-book-open ml-2"></i>
+                    مطالعه یادداشت‌ها
+                </a>
+                <a href="#projects" class="btn-outline">
+                    <i class="fas fa-code ml-2"></i>
+                    مشاهده پروژه‌ها
+                </a>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div class="stat-card">
+                    <div class="text-2xl lg:text-3xl font-bold text-cyber-green mb-2">6+</div>
+                    <div class="text-gray-400 text-sm">سال تجربه</div>
+                </div>
+                <div class="stat-card">
+                    <div class="text-2xl lg:text-3xl font-bold text-cyber-blue mb-2">+15</div>
+                    <div class="text-gray-400 text-sm">پروژه انجام شده</div>
+                </div>
+                <div class="stat-card">
+                    <div class="text-2xl lg:text-3xl font-bold text-cyber-purple mb-2">1</div>
+                    <div class="text-gray-400 text-sm">مقاله منتشر شده</div>
+                </div>
+                <div class="stat-card">
+                    <div class="text-2xl lg:text-3xl font-bold text-cyber-green mb-2">5+</div>
+                    <div class="text-gray-400 text-sm">تست امنیتی</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-cyber-green text-xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative z-10">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">درباره من</h2>
+                <p class="section-subtitle">بیش از یک دهه در دنیای فناوری</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Story -->
+                    <div class="space-y-6">
+                        <div class="about-card">
+                            <h3 class="text-xl font-semibold text-cyber-green mb-4">🚀 شروع سفر</h3>
+                            <p class="text-gray-300 leading-relaxed">
+                                از ۱۵ سالگی با جاوااسکریپت وارد دنیای برنامه‌نویسی شدم. اولین پروژه‌هام وبسایت‌های ساده بودند، 
+                                اما همان موقع متوجه شدم که کدنویسی فقط یک مهارت نیست، بلکه یک هنر است.
+                            </p>
+                        </div>
+
+                        <div class="about-card">
+                            <h3 class="text-xl font-semibold text-cyber-blue mb-4">🐍 تسلط بر پایتون</h3>
+                            <p class="text-gray-300 leading-relaxed">
+                                پایتون به سرعت تبدیل به زبان اصلی من شد. از وب‌اسکرپینگ تا machine learning، 
+                                از اتوماسیون تا ساخت ابزارهای امنیتی - پایتون همیشه همراه من بوده.
+                            </p>
+                        </div>
+
+                        <div class="about-card">
+                            <h3 class="text-xl font-semibold text-cyber-purple mb-4">🛡️ ورود به امنیت سایبری</h3>
+                            <p class="text-gray-300 leading-relaxed">
+                                کنجکاوی در مورد ساختار سیستم‌ها و شبکه‌ها منو کشوند به دنیای امنیت سایبری. 
+                                از تحلیل malware تا تست نفوذ، هر روز در حال یادگیری و کشف چیزهای جدید هستم.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Skills Progress -->
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-semibold text-center mb-8">مهارت‌های کلیدی</h3>
+                        
+                        <div class="skill-bar">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">امنیت سایبری</span>
+                                <span class="text-sm text-cyber-green">95%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-bar">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">Python Development</span>
+                                <span class="text-sm text-cyber-blue">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill bg-cyber-blue" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-bar">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">تست نفوذ</span>
+                                <span class="text-sm text-cyber-purple">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill bg-cyber-purple" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-bar">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">JavaScript/Node.js</span>
+                                <span class="text-sm text-cyber-green">80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-bar">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">Linux Administration</span>
+                                <span class="text-sm text-cyber-blue">88%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill bg-cyber-blue" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-card-bg/30 relative z-10">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">تخصص‌ها و مهارت‌ها</h2>
+                <p class="section-subtitle">ابزارها و تکنولوژی‌هایی که با آنها کار می‌کنم</p>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Cybersecurity -->
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="skill-title">امنیت سایبری</h3>
+                    <ul class="skill-list">
+                        <li>تست نفوذ و Ethical Hacking</li>
+                        <li>تحلیل آسیب‌پذیری</li>
+                        <li>Incident Response</li>
+                        <li>Security Auditing</li>
+                        <li>Malware Analysis</li>
+                    </ul>
+                </div>
+
+                <!-- Programming -->
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="skill-title">برنامه‌نویسی</h3>
+                    <ul class="skill-list">
+                        <li>Python (Django, Flask)</li>
+                        <li>JavaScript (Node.js, React)</li>
+                        <li>Bash Scripting</li>
+                        <li>SQL و NoSQL</li>
+                        <li>API Development</li>
+                    </ul>
+                </div>
+
+                <!-- Tools -->
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="skill-title">ابزارها</h3>
+                    <ul class="skill-list">
+                        <li>Kali Linux & Parrot OS</li>
+                        <li>Metasploit & Burp Suite</li>
+                        <li>Nmap & Wireshark</li>
+                        <li>Docker & Kubernetes</li>
+                        <li>Git & DevOps</li>
+                    </ul>
+                </div>
+
+                <!-- Platforms -->
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="skill-title">پلتفرم‌ها</h3>
+                    <ul class="skill-list">
+                        <li>Linux Server Administration</li>
+                        <li>Cloud Security (AWS, Azure)</li>
+                        <li>Network Security</li>
+                        <li>Web Application Security</li>
+                        <li>Mobile Security</li>
+                    </ul>
+                </div>
+
+                <!-- Certifications -->
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="skill-title">گواهینامه‌ها</h3>
+                    <ul class="skill-list">
+                        <li>CEH (Certified Ethical Hacker)</li>
+                        <li>OSCP (در حال خوندن)</li>
+                        <li>CompTIA Security+</li>
+                        <li>Python Certifications</li>
+                        <li>Linux Professional</li>
+                    </ul>
+                </div>
+
+                <!-- Research -->
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="skill-title">تحقیق و توسعه</h3>
+                    <ul class="skill-list">
+                        <li>CVE Research</li>
+                        <li>Zero-day Discovery</li>
+                        <li>Security Tool Development</li>
+                        <li>Threat Intelligence</li>
+                        <li>Technical Writing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 relative z-10">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">پروژه‌ها و کارهای انجام شده</h2>
+                <p class="section-subtitle">نمونه‌ای از پروژه‌ها و ابزارهای توسعه داده شده</p>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-bug text-4xl text-cyber-green"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">ابزار تحلیل آسیب‌پذیری</h3>
+                        <p class="project-description">
+                            ابزار خودکار برای شناسایی و تحلیل آسیب‌پذیری‌های وب اپلیکیشن‌ها با استفاده از Python
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Security</span>
+                            <span class="tag">Web</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                کد منبع
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                دمو
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-network-wired text-4xl text-cyber-blue"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">مانیتورینگ شبکه</h3>
+                        <p class="project-description">
+                            سیستم مانیتورینگ و هشدار برای شبکه‌های شرکتی با قابلیت تشخیص تهدیدات real-time
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Network</span>
+                            <span class="tag">Monitoring</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                کد منبع
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-robot text-4xl text-cyber-purple"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">ربات تلگرام امنیتی</h3>
+                        <p class="project-description">
+                            ربات هوشمند برای اطلاع‌رسانی آسیب‌پذیری‌های جدید و اخبار امنیت سایبری
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Telegram</span>
+                            <span class="tag">API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-telegram"></i>
+                                ربات
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-lock text-4xl text-cyber-green"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">رمزنگاری فایل</h3>
+                        <p class="project-description">
+                            ابزار رمزنگاری پیشرفته برای محافظت از فایل‌ها با استفاده از الگوریتم‌های مدرن
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Cryptography</span>
+                            <span class="tag">Security</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                کد منبع
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line text-4xl text-cyber-blue"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">داشبورد امنیتی</h3>
+                        <p class="project-description">
+                            داشبورد تحلیلی برای مشاهده وضعیت امنیت سیستم‌ها و گزارش‌گیری
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Dashboard</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                دمو
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-terminal text-4xl text-cyber-purple"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">ابزار خط فرمان</h3>
+                        <p class="project-description">
+                            مجموعه ابزارهای CLI برای تست امنیت و مدیریت سیستم‌های لینوکس
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Bash</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">CLI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                کد منبع
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View More Button -->
+            <div class="text-center mt-12">
+                <a href="https://github.com/nerdznj" target="_blank" class="btn-outline">
+                    <i class="fab fa-github ml-2"></i>
+                    مشاهده همه پروژه‌ها در گیت‌هاب
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-card-bg/30 relative z-10">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">ارتباط با من</h2>
+                <p class="section-subtitle">برای همکاری، مشاوره یا صرفاً گفتگو</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div class="space-y-8">
+                        <div class="contact-card">
+                            <h3 class="text-xl font-semibold mb-6 text-cyber-green">راه‌های ارتباطی</h3>
+                            
+                            <div class="space-y-4">
+                                <a href="mailto:contact@nerdznj.ir" class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium">ایمیل</div>
+                                        <div class="text-gray-400">contact@nerdznj.ir</div>
+                                    </div>
+                                </a>
+
+                                <a href="https://github.com/nerdznj" target="_blank" class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fab fa-github"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium">گیت‌هاب</div>
+                                        <div class="text-gray-400">@nerdznj</div>
+                                    </div>
+                                </a>
+
+                                <a href="https://linkedin.com/in/amin-radikal-3aa580322" target="_blank" class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fab fa-linkedin"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium">لینکدین</div>
+                                        <div class="text-gray-400">امین تقی بیگلو</div>
+                                    </div>
+                                </a>
+
+                                <a href="https://twitter.com/Radikal_orea" target="_blank" class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fab fa-twitter"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium">توییتر</div>
+                                        <div class="text-gray-400">@Radikal_orea</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3 class="text-xl font-semibold mb-4 text-cyber-blue">خدمات ارائه شده</h3>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• مشاوره امنیت سایبری</li>
+                                <li>• تست نفوذ و ارزیابی امنیت</li>
+                                <li>• توسعه ابزارهای امنیتی</li>
+                                <li>• آموزش و ورکشاپ</li>
+                                <li>• پیاده‌سازی سیستم‌های امن</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-card">
+                        <h3 class="text-xl font-semibold mb-6 text-cyber-purple">پیام مستقیم</h3>
+                        <form id="contact-form" class="space-y-6">
+                            <div class="form-group">
+                                <label for="name" class="form-label">نام و نام خانوادگی</label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">ایمیل</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject" class="form-label">موضوع</label>
+                                <select id="subject" name="subject" class="form-input" required>
+                                    <option value="">انتخاب کنید...</option>
+                                    <option value="consultation">مشاوره امنیتی</option>
+                                    <option value="project">همکاری پروژه</option>
+                                    <option value="training">آموزش</option>
+                                    <option value="other">سایر</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">پیام</label>
+                                <textarea id="message" name="message" rows="5" class="form-input" required placeholder="پیام خود را اینجا بنویسید..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary w-full">
+                                <i class="fas fa-paper-plane ml-2"></i>
+                                ارسال پیام
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-cyber-green/20 py-8 relative z-10">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-400">
+                        © ۲۰۲۵ Nerdznj. ساخته شده با 
+                        <i class="fas fa-heart text-red-500 mx-1"></i>
+                        توسط 
+                        <a href="/" class="text-cyber-green hover:text-cyber-blue transition-colors">امین تقی بیگلو</a>
+                    </p>
+                </div>
+                <div class="flex space-x-4 space-x-reverse">
+                    <a href="/privacy.html" class="text-gray-400 hover:text-cyber-green transition-colors text-sm">حریم خصوصی</a>
+                    <a href="/terms.html" class="text-gray-400 hover:text-cyber-green transition-colors text-sm">شرایط استفاده</a>
+                    <a href="/sitemap.xml" class="text-gray-400 hover:text-cyber-green transition-colors text-sm">نقشه سایت</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="fixed bottom-8 left-8 w-12 h-12 bg-cyber-green text-black rounded-full shadow-lg hover:bg-cyber-blue transition-all duration-300 opacity-0 pointer-events-none z-50">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+</body>
+</html>
